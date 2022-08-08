@@ -1,6 +1,16 @@
 # Getting Started with Create React App
 
+[reactjs-social-login](https://www.npmjs.com/package/reactjs-social-login)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Google [設定第三方登入的憑證](https://console.cloud.google.com/apis/credentials)  
+我們要的功能在「憑證」裡面  
+在憑證裡面，建立一個「OAuth 用戶端 ID」允許第三方登入  
+
+您的 OAuth 2.0 用戶端名稱  網路用戶端 1  
+已授權的 JavaScript 來源 `http://localhost:3030`  
+已授權的重新導向 URI  `http://localhost:3030`
 
 ## Available Scripts
 
