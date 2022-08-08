@@ -12,6 +12,12 @@ Google [設定第三方登入的憑證](https://console.cloud.google.com/apis/cr
 已授權的 JavaScript 來源 `http://localhost:3030`  `https://jacobhsu.github.io`  
 已授權的重新導向 URI  `http://localhost:3030` `https://jacobhsu.github.io/js-google-api`  
 
+## Facebook
+
+用戶端 OAuth 設定
+
+請前往 developers.facebook.com 將「使用 JavaScript SDK 登入」選項切換為「開啟」，即可使用 JSSDK 進行登入。
+
 ## Available Scripts
 
 In the project directory, you can run:

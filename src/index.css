@@ -31,6 +31,10 @@ code {
   z-index: 1;
 }
 
+.App.hide {
+  visibility: hidden;
+}
+
 /* CARD */
 
 .card {
