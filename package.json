@@ -1,5 +1,6 @@
 {
   "name": "react-social-login-ts",
+  "homepage": "https://jacobhsu.github.io/react-social-login-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
