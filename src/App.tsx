@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import './App.css';
-import { LoginSocialGoogle, IResolveParams } from 'reactjs-social-login';
-import { GoogleLoginButton } from 'react-social-login-buttons';
+import { LoginSocialFacebook, LoginSocialGoogle, IResolveParams } from 'reactjs-social-login';
+import { FacebookLoginButton, GoogleLoginButton } from 'react-social-login-buttons';
 import { User } from './User'
 
 function App() {
@@ -27,7 +27,24 @@ function App() {
       {provider && profile && (
         <User provider={provider} profile={profile} onLogout={onLogout} />
       )}
-      <header className="App-header">
+      <div className={`App ${provider && profile ? 'hide' : ''}`}>
+        <LoginSocialFacebook
+          appId={process.env.REACT_APP_FB_APP_ID || ''}
+          fieldsProfile={
+            'id,first_name,last_name,middle_name,name,name_format,picture,short_name,email,gender'
+          }
+          onLoginStart={onLoginStart}
+          onLogoutSuccess={onLogoutSuccess}
+          onResolve={({ provider, data }: IResolveParams) => {
+            setProvider(provider)
+            setProfile(data)
+          }}
+          onReject={(err) => {
+            console.log(err)
+          }}
+        >
+          <FacebookLoginButton />
+        </LoginSocialFacebook>
         <LoginSocialGoogle
           client_id={process.env.REACT_APP_GG_APP_ID || ''}
           onLoginStart={onLoginStart}
@@ -44,15 +61,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
     </div>
   );
 }
