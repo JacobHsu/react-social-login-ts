@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import './App.css';
-import { LoginSocialFacebook, LoginSocialGoogle, LoginSocialAmazon, LoginSocialTwitter, IResolveParams } from 'reactjs-social-login';
-import { FacebookLoginButton, GoogleLoginButton, AmazonLoginButton, TwitterLoginButton } from 'react-social-login-buttons';
+import { LoginSocialFacebook, LoginSocialGoogle, LoginSocialAmazon, IResolveParams } from 'reactjs-social-login';
+import { FacebookLoginButton, GoogleLoginButton, AmazonLoginButton } from 'react-social-login-buttons';
 import { User } from './User'
 
 const REDIRECT_URI = 'https://20d3-1-55-164-102.ap.ngrok.io/account/login'
@@ -74,22 +74,6 @@ function App() {
         >
           <AmazonLoginButton />
         </LoginSocialAmazon>
-        <LoginSocialTwitter
-          client_id={process.env.REACT_APP_TWITTER_V2_APP_KEY || ''}
-          // client_secret={process.env.REACT_APP_TWITTER_V2_APP_SECRET || ''}
-          redirect_uri={REDIRECT_URI}
-          onLoginStart={onLoginStart}
-          onLogoutSuccess={onLogoutSuccess}
-          onResolve={({ provider, data }: IResolveParams) => {
-            setProvider(provider)
-            setProfile(data)
-          }}
-          onReject={(err: any) => {
-            console.log(err)
-          }}
-        >
-          <TwitterLoginButton />
-        </LoginSocialTwitter>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
