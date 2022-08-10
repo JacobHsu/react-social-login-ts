@@ -18,6 +18,12 @@ Google [設定第三方登入的憑證](https://console.cloud.google.com/apis/cr
 
 請前往 developers.facebook.com 將「使用 JavaScript SDK 登入」選項切換為「開啟」，即可使用 JSSDK 進行登入。
 
+## Amazon
+
+[Login with Amazon for Websites Overview](https://developer.amazon.com/docs/login-with-amazon/documentation-overview.html)
+
+Security Profile
+
 ## Available Scripts
 
 In the project directory, you can run:
